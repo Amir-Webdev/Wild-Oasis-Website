@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import Navigation from "./_components/Navigation";
 import Logo from "./_components/Logo";
 import "@/app/_styles/globals.css";
+import { vazirmatn } from "./_fonts/Vazirmatn";
 
 type RootLayoutProps = {
   children: ReactNode;
@@ -21,7 +22,7 @@ function RootLayout({ children }: RootLayoutProps) {
     <html lang="fa">
       <body
         dir="rtl"
-        className="font-[Vazirmatn] bg-primary-950 text-primary-100 min-h-screen"
+        className={`${vazirmatn.className} bg-primary-950 text-primary-100 min-h-screen`}
       >
         <header>
           <Logo />

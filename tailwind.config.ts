@@ -36,9 +36,6 @@ const config: Config = {
           950: "#382814",
         },
       },
-      fontFamily: {
-        custom: ['"Vazirmatn"', "sans-serif"],
-      },
     },
   },
   plugins: [],
