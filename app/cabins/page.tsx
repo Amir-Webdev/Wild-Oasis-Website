@@ -1,5 +1,9 @@
 import Counter from "../_components/Counter";
 
+export const metadata = {
+  title: "کابین ها",
+};
+
 function Page() {
   return (
     <div>
