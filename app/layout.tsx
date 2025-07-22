@@ -1,8 +1,7 @@
 import { ReactNode } from "react";
-import Navigation from "./_components/Navigation";
-import Logo from "./_components/Logo";
 import "@/app/_styles/globals.css";
 import { vazirmatn } from "./_fonts/Vazirmatn";
+import Header from "./_components/Header";
 
 type RootLayoutProps = {
   children: ReactNode;
@@ -22,13 +21,12 @@ function RootLayout({ children }: RootLayoutProps) {
     <html lang="fa">
       <body
         dir="rtl"
-        className={`${vazirmatn.className} bg-primary-950 text-primary-100 min-h-screen`}
+        className={`${vazirmatn.className} bg-primary-950 text-primary-100 antialiased min-h-screen flex flex-col`}
       >
-        <header>
-          <Logo />
-          <Navigation />
-        </header>
-        <main>{children}</main>
+        <Header />
+        <div className="flex-1 px-8 py-12">
+          <main className="mx-auto max-w-7xl">{children}</main>
+        </div>
       </body>
     </html>
   );

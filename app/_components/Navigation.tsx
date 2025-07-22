@@ -1,22 +1,34 @@
 import Link from "next/link";
 
-function Navigation() {
+export default function Navigation() {
   return (
-    <ul>
-      <li>
-        <Link href="/">خانه</Link>
-      </li>
-      <li>
-        <Link href="/cabins">کابین ها</Link>
-      </li>
-      <li>
-        <Link href="/about">درباره پناهگاه بکر</Link>
-      </li>
-      <li>
-        <Link href="/account">حساب کاربری</Link>
-      </li>
-    </ul>
+    <nav className="z-10 text-lg">
+      <ul className="flex gap-16 items-center">
+        <li>
+          <Link
+            href="/cabins"
+            className="hover:text-accent-400 transition-colors"
+          >
+            کابین ها
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/about"
+            className="hover:text-accent-400 transition-colors"
+          >
+            درباره ما
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/account"
+            className="hover:text-accent-400 transition-colors"
+          >
+            حساب کاربری
+          </Link>
+        </li>
+      </ul>
+    </nav>
   );
 }
-
-export default Navigation;
