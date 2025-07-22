@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
-import Navigation from "./components/Navigation";
-import Logo from "./components/Logo";
+import Navigation from "./_components/Navigation";
+import Logo from "./_components/Logo";
+import "@/app/_styles/globals.css";
 
 type RootLayoutProps = {
   children: ReactNode;
@@ -13,7 +14,7 @@ export const metadata = {
 function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="fa">
-      <body dir="rtl">
+      <body dir="rtl" className="font-[Vazirmatn]">
         <header>
           <Logo />
           <Navigation />
