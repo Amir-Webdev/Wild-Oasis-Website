@@ -11,4 +11,6 @@ export const CabinSchema = z.object({
   image: z.string(),
 });
 
+export const CabinsSchema = z.array(CabinSchema);
+
 export type CabinType = z.infer<typeof CabinSchema>;

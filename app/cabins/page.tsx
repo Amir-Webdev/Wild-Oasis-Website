@@ -1,11 +1,14 @@
 import CabinCard from "@/app/components/CabinCard";
 import { CabinType } from "../types";
+import { getCabins } from "../lib/data-service";
 
 export const metadata = {
   title: "کابین ها",
 };
 
 function Page() {
+  getCabins();
+
   // CHANGE
   const cabins: CabinType[] = [];
 
