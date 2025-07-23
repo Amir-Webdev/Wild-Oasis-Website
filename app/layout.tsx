@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import "@/app/_styles/globals.css";
-import { vazirmatn } from "./_fonts/Vazirmatn";
-import Header from "./_components/Header";
+import "@/app/styles/globals.css";
+import { vazirmatn } from "./fonts/Vazirmatn";
+import Header from "./components/Header";
 
 type RootLayoutProps = {
   children: ReactNode;

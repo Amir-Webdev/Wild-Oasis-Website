@@ -1,11 +1,12 @@
-import { UsersIcon } from "@heroicons/react/24/solid";
+import { HiOutlineUsers } from "react-icons/hi2";
+import Image from "next/image";
 
 function CabinCard({ cabin }) {
   const { id, name, maxCapacity, regularPrice, discount, image } = cabin;
 
   return (
     <div className="flex border-primary-800 border">
-      <img
+      <Image
         src={image}
         alt={`Cabin ${name}`}
         className="flex-1 border-r border-primary-800"
@@ -18,7 +19,7 @@ function CabinCard({ cabin }) {
           </h3>
 
           <div className="flex gap-3 items-center mb-2">
-            <UsersIcon className="h-5 w-5 text-primary-600" />
+            <HiOutlineUsers className="h-5 w-5 text-primary-600" />
             <p className="text-lg text-primary-200">
               For up to <span className="font-bold">{maxCapacity}</span> guests
             </p>
