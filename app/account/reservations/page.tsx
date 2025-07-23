@@ -1,4 +1,8 @@
-import ReservationCard from "./ReservationCard";
+import ReservationCard from "../../components/ReservationCard";
+
+export const metadata = {
+  title: "رزرو ها",
+};
 
 export default function Page() {
   // CHANGE

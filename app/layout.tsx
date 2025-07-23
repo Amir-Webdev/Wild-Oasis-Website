@@ -24,8 +24,8 @@ function RootLayout({ children }: RootLayoutProps) {
         className={`${vazirmatn.className} bg-primary-950 text-primary-100 antialiased min-h-screen flex flex-col`}
       >
         <Header />
-        <div className="flex-1 px-8 py-12">
-          <main className="mx-auto max-w-7xl">{children}</main>
+        <div className="flex-1 px-8 py-12 grid">
+          <main className="mx-auto max-w-7xl w-full">{children}</main>
         </div>
       </body>
     </html>

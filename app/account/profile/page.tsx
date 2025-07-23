@@ -1,4 +1,8 @@
-import SelectCountry from "@/app/_components/SelectCountry";
+import SelectCountry from "@/app/components/SelectCountry";
+
+export const metadata = {
+  title: "پروفایل کاربر",
+};
 
 export default function Page() {
   // CHANGE
