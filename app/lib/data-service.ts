@@ -13,9 +13,6 @@ export async function getCabin(id: number): Promise<CabinType> {
     .eq("id", id)
     .single();
 
-  // For testing
-  // await new Promise((res) => setTimeout(res, 1000));
-
   if (supabaseError) {
     logger(supabaseError);
     throw new Error("خطا در بارگذاری اطلاعات کابین");
@@ -81,6 +78,8 @@ export const getCabins = async function (): Promise<CabinType[]> {
     throw new Error("خطا در اعتبارسنجی اطلاعات کابین ها");
   }
 
+  // For Testing
+  // await new Promise((res) => setTimeout(res, 1000));
   return parsedCabins;
 };
 
