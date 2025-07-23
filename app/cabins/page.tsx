@@ -6,11 +6,8 @@ export const metadata = {
   title: "کابین ها",
 };
 
-function Page() {
-  getCabins();
-
-  // CHANGE
-  const cabins: CabinType[] = [];
+async function Page() {
+  const cabins: CabinType[] = await getCabins();
 
   return (
     <div>
