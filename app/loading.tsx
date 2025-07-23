@@ -1,5 +1,7 @@
+import Spinner from "./components/Spinner";
+
 function Loading() {
-  return <p>در حال بارگذاری...</p>;
+  return <Spinner />;
 }
 
 export default Loading;

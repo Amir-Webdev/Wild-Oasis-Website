@@ -2,6 +2,7 @@ import { HiOutlineUsers } from "react-icons/hi2";
 import Image from "next/image";
 import { CabinType } from "../types";
 import Link from "next/link";
+import { toPersianNum } from "../lib/toPersianNum";
 
 type CabinCardPropTypes = {
   cabin: CabinType;
@@ -30,7 +31,8 @@ function CabinCard({ cabin }: CabinCardPropTypes) {
           <div className="flex gap-3 items-center mb-2">
             <HiOutlineUsers className="h-5 w-5 text-primary-600" />
             <p className="text-lg text-primary-200">
-              تا <span className="font-bold">{maxCapacity}</span> نفر
+              تا <span className="font-bold">{toPersianNum(maxCapacity)}</span>{" "}
+              نفر
             </p>
           </div>
 
@@ -38,20 +40,22 @@ function CabinCard({ cabin }: CabinCardPropTypes) {
             {discount > 0 ? (
               <>
                 <span className="text-3xl font-[350]">
-                  تومان {regularPrice - discount}
+                  {toPersianNum(regularPrice - discount)} تومان
                 </span>
                 <span className="line-through font-semibold text-primary-600">
-                  تومان {regularPrice}
+                  {toPersianNum(regularPrice)} تومان
                 </span>
               </>
             ) : (
-              <span className="text-3xl font-[350]">تومان {regularPrice}</span>
+              <span className="text-3xl font-[350]">
+                {toPersianNum(regularPrice)} تومان
+              </span>
             )}
             <span className="text-primary-200">/ شب</span>
           </p>
         </div>
 
-        <div className="bg-primary-950 border-t border-t-primary-800 text-right">
+        <div className="bg-primary-950 border-t border-t-primary-800 text-left">
           <Link
             href={`/cabins/${id}`}
             className="border-l border-primary-800 py-4 px-6 inline-block hover:bg-accent-600 transition-all hover:text-primary-900"
