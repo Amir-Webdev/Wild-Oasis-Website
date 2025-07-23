@@ -1,5 +1,6 @@
 import { getCabin } from "@/app/lib/data-service";
 import { toPersianNum } from "@/app/lib/toPersianNum";
+import { CabinType } from "@/app/types";
 import Image from "next/image";
 import {
   HiOutlineEyeSlash,
@@ -11,9 +12,19 @@ type PagePropTypes = {
   params: { cabinId: string };
 };
 
+export async function generateMetadata({ params }: PagePropTypes) {
+  const { name } = await getCabin(Number(params.cabinId));
+
+  return {
+    title: `کلبه ${name}`,
+  };
+}
+
 async function Page({ params }: PagePropTypes) {
-  const cabinId = Number(params.cabinId);
-  const cabin = await getCabin(cabinId);
+  const cabinId: number = Number(params.cabinId);
+  const cabin: CabinType = await getCabin(cabinId);
+
+  if (!cabin) return <p>کابینی با شناسه داده شده یافت نشد</p>;
 
   const { id, name, maxCapacity, regularPrice, discount, image, description } =
     cabin;
