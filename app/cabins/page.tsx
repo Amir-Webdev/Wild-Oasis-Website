@@ -1,10 +1,22 @@
 import { Suspense } from "react";
 import CabinList from "../components/CabinList";
 import Spinner from "../components/Spinner";
+import { getCabins } from "../lib/data-service";
+import { CabinType } from "../types";
 
 export const metadata = {
   title: "کابین ها",
 };
+
+export async function generateStaticParams(): Promise<{ cabinId: string }[]> {
+  const cabins: CabinType[] = await getCabins();
+
+  const ids = cabins.map((cabin) => {
+    return { cabinId: String(cabin.id) };
+  });
+
+  return ids;
+}
 
 function Page() {
   return (
