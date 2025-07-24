@@ -1,11 +1,19 @@
 import Image from "next/image";
 import about1 from "@/public/about-1.jpg";
+import { CabinType } from "../types";
+import { getCabins } from "../lib/data-service";
+import { toPersianNum } from "../lib/toPersianNum";
+
+export const revalidate = 86400;
 
 export const metadata = {
   title: "درباره ما",
 };
 
-function Page() {
+async function Page() {
+  const cabins: CabinType[] = await getCabins();
+  const numOfCabins = cabins.length;
+
   return (
     <div className="grid grid-cols-5 gap-x-24 gap-y-32 text-lg items-center">
       <div className="col-span-3">
@@ -21,10 +29,11 @@ function Page() {
             برای پیوند دوباره با طبیعت و لذت بردن از سادگی در کنار خانواده.
           </p>
           <p>
-            هشت کلبه‌ی لوکس ما محیطی گرم و دنج فراهم می‌کنند، اما آرامش واقعی و
-            حس رهایی را در دل کوه‌های اطراف خواهید یافت. در میان جنگل‌های سرسبز
-            قدم بزنید، هوای تازه را عمیق نفس بکشید، و از گرمای آتش در دل شب یا
-            وان آب‌گرم‌تان، به آسمانی پرستاره خیره شوید.
+            {toPersianNum(numOfCabins)} کلبه‌ی لوکس ما محیطی گرم و دنج فراهم
+            می‌کنند، اما آرامش واقعی و حس رهایی را در دل کوه‌های اطراف خواهید
+            یافت. در میان جنگل‌های سرسبز قدم بزنید، هوای تازه را عمیق نفس بکشید،
+            و از گرمای آتش در دل شب یا وان آب‌گرم‌تان، به آسمانی پرستاره خیره
+            شوید.
           </p>
           <p>
             اینجاست که لحظات ماندگار شکل می‌گیرند — در آغوش شکوه طبیعت. جایی

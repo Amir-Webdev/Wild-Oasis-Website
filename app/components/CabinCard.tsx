@@ -13,7 +13,7 @@ function CabinCard({ cabin }: CabinCardPropTypes) {
 
   return (
     <div className="flex border-primary-800 border rounded-xl">
-      <div className="flex-1 relative">
+      <div className="flex-1 relative min-w-52">
         <Image
           src={image}
           fill
@@ -23,7 +23,7 @@ function CabinCard({ cabin }: CabinCardPropTypes) {
       </div>
 
       <div className="flex-grow">
-        <div className="pt-5 pb-4 px-7 bg-primary-950">
+        <div className="pt-5 pb-4 pl-7 pr-3 bg-primary-950">
           <h3 className="text-accent-500 font-semibold text-2xl mb-3">
             کابین {name}
           </h3>
@@ -58,7 +58,7 @@ function CabinCard({ cabin }: CabinCardPropTypes) {
         <div className="bg-primary-950 border-t border-t-primary-800 text-left">
           <Link
             href={`/cabins/${id}`}
-            className="border-l border-primary-800 py-4 px-6 inline-block hover:bg-accent-600 transition-all hover:text-primary-900"
+            className="py-4 px-6 inline-block hover:bg-accent-600 transition-all hover:text-primary-900 rounded-bl-xl"
           >
             اطلاعات و رزرو &rarr;
           </Link>

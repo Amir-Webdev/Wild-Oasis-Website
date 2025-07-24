@@ -4,6 +4,8 @@ import Spinner from "../components/Spinner";
 import { getCabins } from "../lib/data-service";
 import { CabinType } from "../types";
 
+// export const revalidate = 3600;
+
 export const metadata = {
   title: "کابین ها",
 };
