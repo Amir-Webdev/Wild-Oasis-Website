@@ -24,8 +24,6 @@ async function Page({ params }: PagePropTypes) {
   const cabinId: number = Number(params.cabinId);
   const cabin: CabinType = await getCabin(cabinId);
 
-  if (!cabin) return <p>کابینی با شناسه داده شده یافت نشد</p>;
-
   const { id, name, maxCapacity, regularPrice, discount, image, description } =
     cabin;
 

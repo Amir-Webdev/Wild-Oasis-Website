@@ -2,6 +2,7 @@
 import supabase from "./supabase";
 import logger from "./logger";
 import { CabinSchema, CabinsSchema, CabinType } from "../types/cabin";
+import { notFound } from "next/navigation";
 
 /////////////
 // GET
@@ -14,8 +15,12 @@ export async function getCabin(id: number): Promise<CabinType> {
     .single();
 
   if (supabaseError) {
-    logger(supabaseError);
-    throw new Error("خطا در بارگذاری اطلاعات کابین");
+    if (supabaseError.code === "PGRST116") {
+      notFound();
+    } else {
+      logger(supabaseError);
+      throw new Error("خطا در بارگذاری اطلاعات کابین");
+    }
   }
 
   const result = CabinSchema.safeParse(cabin);
